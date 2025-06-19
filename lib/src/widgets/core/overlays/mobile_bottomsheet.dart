@@ -95,8 +95,9 @@ class _MobileBottomSheet extends StatelessWidget {
       onTap: onTap,
       title: FittedBox(
         fit: BoxFit.scaleDown,
-        alignment: Alignment.centerLeft,
+        alignment: AlignmentDirectional.topStart,
         child: Row(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               title,
