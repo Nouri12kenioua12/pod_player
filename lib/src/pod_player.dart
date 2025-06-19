@@ -54,7 +54,8 @@ class PodVideoPlayer extends StatefulWidget {
   /// Sets a custom loading widget.
   /// If no widget is informed, a default [CircularProgressIndicator] will be shown.
   final WidgetBuilder? onLoading;
-  final bool Function()? onClickSave;
+  final Future<void> Function()? onClickSave;
+
 
   PodVideoPlayer({
     required this.controller,

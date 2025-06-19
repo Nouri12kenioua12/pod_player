@@ -57,9 +57,7 @@ class _YoutubeVideoViewerState extends State<YoutubeVideoViewer> {
         : Center(
             child: PodVideoPlayer(
               controller: controller,
-              onClickSave: () {
-                return true;
-              },
+              onClickSave: () async {},
             ),
           );
   }

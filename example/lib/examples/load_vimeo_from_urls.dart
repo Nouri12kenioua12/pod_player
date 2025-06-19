@@ -54,8 +54,7 @@ class VimeoVideoViewerState extends State<VimeoVideoViewer> {
         : Center(
             child: PodVideoPlayer(
               controller: controller,
-              onClickSave: () {
-                return true;
+              onClickSave: () async{
               },
             ),
           );

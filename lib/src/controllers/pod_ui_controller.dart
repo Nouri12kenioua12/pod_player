@@ -14,7 +14,7 @@ class _PodUiController extends _PodBaseController {
   WidgetBuilder? onLoading;
 
   ///video player labels
-  PodPlayerLabels podPlayerLabels =  PodPlayerLabels();
+  PodPlayerLabels podPlayerLabels =  const PodPlayerLabels();
+  Future<void> Function()? onClickSave;
 
-  bool Function()? onClickSave;
 }
