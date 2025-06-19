@@ -29,6 +29,7 @@ class VimeoVideoViewer extends StatefulWidget {
 class VimeoVideoViewerState extends State<VimeoVideoViewer> {
   late final PodPlayerController controller;
   bool isLoading = true;
+
   @override
   void initState() {
     loadVideo();
@@ -50,6 +51,13 @@ class VimeoVideoViewerState extends State<VimeoVideoViewer> {
   Widget build(BuildContext context) {
     return isLoading
         ? const Center(child: CircularProgressIndicator())
-        : Center(child: PodVideoPlayer(controller: controller));
+        : Center(
+            child: PodVideoPlayer(
+              controller: controller,
+              onClickSave: () {
+                return true;
+              },
+            ),
+          );
   }
 }

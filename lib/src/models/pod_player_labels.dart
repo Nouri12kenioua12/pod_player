@@ -1,32 +1,43 @@
+import 'package:flutter/cupertino.dart';
+
 class PodPlayerLabels {
-  final String? play;
-  final String? pause;
-  final String? mute;
-  final String? unmute;
-  final String settings;
-  final String? fullscreen;
-  final String? exitFullScreen;
-  final String loopVideo;
-  final String playbackSpeed;
-  final String quality;
-  final String optionEnabled;
-  final String optionDisabled;
-  final String error;
+  final PodPlayersItems? play;
+  final PodPlayersItems? pause;
+  final PodPlayersItems? mute;
+  final PodPlayersItems? unmute;
+  final PodPlayersItems settings;
+  final PodPlayersItems? fullscreen;
+  final PodPlayersItems? exitFullScreen;
+  final PodPlayersItems loopVideo;
+  final PodPlayersItems playbackSpeed;
+  final PodPlayersItems quality;
+  final PodPlayersItems optionEnabled;
+  final PodPlayersItems optionDisabled;
+  final PodPlayersItems error;
+  final PodPlayersItems save;
 
   /// Labels displayed in the video player progress bar and when an error occurs
-  const PodPlayerLabels({
+ const  PodPlayerLabels({
     this.play,
     this.pause,
     this.mute,
     this.unmute,
-    this.settings = 'Settings',
+    this.settings = const PodPlayersItems(title: 'Settings',),
     this.fullscreen,
     this.exitFullScreen,
-    this.loopVideo = 'Loop Video',
-    this.playbackSpeed = 'Playback speed',
-    this.error = 'Error while playing video',
-    this.quality = 'Quality',
-    this.optionEnabled = 'on',
-    this.optionDisabled = 'off',
+    this.loopVideo =  const PodPlayersItems(title: 'Loop video',),
+    this.playbackSpeed =  const PodPlayersItems(title: 'Playback speed',),
+    this.error =  const PodPlayersItems(title: 'Error',),
+    this.quality =  const PodPlayersItems(title: 'Quality',),
+    this.optionEnabled =  const PodPlayersItems(title: 'on',),
+    this.optionDisabled =  const PodPlayersItems(title: 'off',),
+    this.save =   const PodPlayersItems(title: 'Save',),
   });
+}
+
+class PodPlayersItems {
+  final String title;
+  final IconData? icon;
+
+  const PodPlayersItems({required this.title, this.icon});
 }

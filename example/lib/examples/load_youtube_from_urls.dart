@@ -30,6 +30,7 @@ class YoutubeVideoViewer extends StatefulWidget {
 class _YoutubeVideoViewerState extends State<YoutubeVideoViewer> {
   late final PodPlayerController controller;
   bool isLoading = true;
+
   @override
   void initState() {
     loadVideo();
@@ -53,6 +54,13 @@ class _YoutubeVideoViewerState extends State<YoutubeVideoViewer> {
   Widget build(BuildContext context) {
     return isLoading
         ? const Center(child: CircularProgressIndicator())
-        : Center(child: PodVideoPlayer(controller: controller));
+        : Center(
+            child: PodVideoPlayer(
+              controller: controller,
+              onClickSave: () {
+                return true;
+              },
+            ),
+          );
   }
 }

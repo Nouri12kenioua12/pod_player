@@ -6,6 +6,7 @@ import 'package:example/screens/from_youtube.dart';
 import 'package:flutter/material.dart';
 import 'package:pod_player/pod_player.dart';
 
+import 'examples/play_list_of_videos.dart';
 import 'screens/cutom_video_controllers.dart';
 import 'screens/from_vimeo_id.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         '/fromNetwork': (context) => const PlayVideoFromNetwork(),
         '/fromNetworkQualityUrls': (context) =>
             const PlayVideoFromNetworkQualityUrls(),
-        '/customVideo': (context) => const CustomVideoControlls(),
+        '/customVideo': (context) => const ListOfVideosApp(),
       },
       home: const MainPage(),
     );

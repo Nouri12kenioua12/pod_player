@@ -22,7 +22,7 @@ class _WebSettingsDropdownState extends State<_WebSettingsDropdown> {
         tag: widget.tag,
         builder: (podCtr) {
           return MaterialIconButton(
-            toolTipMesg: podCtr.podPlayerLabels.settings,
+            toolTipMesg: podCtr.podPlayerLabels.settings.title,
             color: Colors.white,
             child: const Icon(Icons.settings),
             onPressed: () => podCtr.isFullScreen
@@ -36,7 +36,7 @@ class _WebSettingsDropdownState extends State<_WebSettingsDropdown> {
                     PopupMenuItem(
                       value: 'OUALITY',
                       child: _bottomSheetTiles(
-                        title: podCtr.podPlayerLabels.quality,
+                        title: podCtr.podPlayerLabels.quality.title,
                         icon: Icons.video_settings_rounded,
                         subText: '${podCtr.vimeoPlayingVideoQuality}p',
                       ),
@@ -44,17 +44,17 @@ class _WebSettingsDropdownState extends State<_WebSettingsDropdown> {
                   PopupMenuItem(
                     value: 'LOOP',
                     child: _bottomSheetTiles(
-                      title: podCtr.podPlayerLabels.loopVideo,
+                      title: podCtr.podPlayerLabels.loopVideo.title,
                       icon: Icons.loop_rounded,
                       subText: podCtr.isLooping
-                          ? podCtr.podPlayerLabels.optionEnabled
-                          : podCtr.podPlayerLabels.optionDisabled,
+                          ? podCtr.podPlayerLabels.optionEnabled.title
+                          : podCtr.podPlayerLabels.optionDisabled.title,
                     ),
                   ),
                   PopupMenuItem(
                     value: 'SPEED',
                     child: _bottomSheetTiles(
-                      title: podCtr.podPlayerLabels.playbackSpeed,
+                      title: podCtr.podPlayerLabels.playbackSpeed.title,
                       icon: Icons.slow_motion_video_rounded,
                       subText: podCtr.currentPaybackSpeed,
                     ),

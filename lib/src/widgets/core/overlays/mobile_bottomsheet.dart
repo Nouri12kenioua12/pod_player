@@ -16,8 +16,9 @@ class _MobileBottomSheet extends StatelessWidget {
         children: [
           if (podCtr.vimeoOrVideoUrls.isNotEmpty)
             _bottomSheetTiles(
-              title: podCtr.podPlayerLabels.quality,
-              icon: Icons.video_settings_rounded,
+              title: podCtr.podPlayerLabels.quality.title,
+              icon: podCtr.podPlayerLabels.quality.icon ??
+                  Icons.video_settings_rounded,
               subText: '${podCtr.vimeoPlayingVideoQuality}p',
               onTap: () {
                 Navigator.of(context).pop();
@@ -38,19 +39,20 @@ class _MobileBottomSheet extends StatelessWidget {
               },
             ),
           _bottomSheetTiles(
-            title: podCtr.podPlayerLabels.loopVideo,
-            icon: Icons.loop_rounded,
+            title: podCtr.podPlayerLabels.loopVideo.title,
+            icon: podCtr.podPlayerLabels.loopVideo.icon ?? Icons.loop_rounded,
             subText: podCtr.isLooping
-                ? podCtr.podPlayerLabels.optionEnabled
-                : podCtr.podPlayerLabels.optionDisabled,
+                ? podCtr.podPlayerLabels.optionEnabled.title
+                : podCtr.podPlayerLabels.optionDisabled.title,
             onTap: () {
               Navigator.of(context).pop();
               podCtr.toggleLooping();
             },
           ),
           _bottomSheetTiles(
-            title: podCtr.podPlayerLabels.playbackSpeed,
-            icon: Icons.slow_motion_video_rounded,
+            title: podCtr.podPlayerLabels.playbackSpeed.title,
+            icon: podCtr.podPlayerLabels.playbackSpeed.icon ??
+                Icons.slow_motion_video_rounded,
             subText: podCtr.currentPaybackSpeed,
             onTap: () {
               Navigator.of(context).pop();
@@ -68,6 +70,15 @@ class _MobileBottomSheet extends StatelessWidget {
               });
             },
           ),
+          if (podCtr.onClickSave != null)
+            _bottomSheetTiles(
+                title: podCtr.podPlayerLabels.save.title,
+                icon:
+                    podCtr.podPlayerLabels.save.icon ?? Icons.save_alt_outlined,
+                onTap: () {
+                  Navigator.of(context).pop();
+                  podCtr.onClickSave!();
+                }),
         ],
       ),
     );
@@ -224,9 +235,9 @@ class _MobileOverlayBottomControlles extends StatelessWidget {
               const Spacer(),
               MaterialIconButton(
                 toolTipMesg: podCtr.isFullScreen
-                    ? podCtr.podPlayerLabels.exitFullScreen ??
+                    ? podCtr.podPlayerLabels.exitFullScreen?.title ??
                         'Exit full screen${kIsWeb ? ' (f)' : ''}'
-                    : podCtr.podPlayerLabels.fullscreen ??
+                    : podCtr.podPlayerLabels.fullscreen?.title ??
                         'Fullscreen${kIsWeb ? ' (f)' : ''}',
                 color: itemColor,
                 onPressed: () {

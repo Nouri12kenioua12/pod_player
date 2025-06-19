@@ -54,6 +54,7 @@ class PodVideoPlayer extends StatefulWidget {
   /// Sets a custom loading widget.
   /// If no widget is informed, a default [CircularProgressIndicator] will be shown.
   final WidgetBuilder? onLoading;
+  final bool Function()? onClickSave;
 
   PodVideoPlayer({
     required this.controller,
@@ -72,6 +73,7 @@ class PodVideoPlayer extends StatefulWidget {
     this.videoThumbnail,
     this.onToggleFullScreen,
     this.onLoading,
+    this.onClickSave,
   }) {
     addToUiController();
   }
@@ -90,6 +92,7 @@ class PodVideoPlayer extends StatefulWidget {
       ..videoTitle = videoTitle
       ..onToggleFullScreen = onToggleFullScreen
       ..onLoading = onLoading
+      ..onClickSave = onClickSave
       ..videoThumbnail = videoThumbnail;
   }
 
@@ -171,7 +174,7 @@ class _PodVideoPlayerState extends State<PodVideoPlayer>
             ),
             const SizedBox(height: 20),
             Text(
-              widget.podPlayerLabels.error,
+              widget.podPlayerLabels.error.title,
               style: const TextStyle(color: Colors.red),
             ),
           ],

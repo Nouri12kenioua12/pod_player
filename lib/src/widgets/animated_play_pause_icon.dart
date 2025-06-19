@@ -60,9 +60,9 @@ class _AnimatedPlayPauseIconState extends State<_AnimatedPlayPauseIcon>
           id: 'podVideoState',
           builder: (f) => MaterialIconButton(
             toolTipMesg: f.isvideoPlaying
-                ? podCtr.podPlayerLabels.pause ??
+                ? podCtr.podPlayerLabels.pause?.title ??
                     'Pause${kIsWeb ? ' (space)' : ''}'
-                : podCtr.podPlayerLabels.play ??
+                : podCtr.podPlayerLabels.play?.title ??
                     'Play${kIsWeb ? ' (space)' : ''}',
             onPressed:
                 podCtr.isOverlayVisible ? podCtr.togglePlayPauseVideo : null,

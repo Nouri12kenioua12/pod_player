@@ -22,6 +22,7 @@ class ListOfVideosApp extends StatelessWidget {
             podPlayerConfig: const PodPlayerConfig(autoPlay: false),
           ),
           PodPlayerController(
+
             playVideoFrom:
                 PlayVideoFrom.youtube('https://youtu.be/A3ltMaM6noM'),
             podPlayerConfig: const PodPlayerConfig(autoPlay: false),
