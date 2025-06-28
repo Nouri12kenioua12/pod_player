@@ -65,14 +65,18 @@ class _MobileOverlay extends StatelessWidget {
                 toolTipMesg: podCtr.podPlayerLabels.settings.title,
                 color: itemColor,
                 onPressed: () {
-                  if (podCtr.isOverlayVisible) {
-                    _bottomSheet(context);
-                  } else {
-                    podCtr.toggleVideoOverlay();
+                  if (podCtr.onClickSave != null) {
+                    Navigator.of(context).pop();
+                    podCtr.onClickSave!();
                   }
+                  // if (podCtr.isOverlayVisible) {
+                  //   _bottomSheet(context);
+                  // } else {
+                  //   podCtr.toggleVideoOverlay();
+                  // }
                 },
-                child: const Icon(
-                  Icons.more_vert_rounded,
+                child: Icon(
+                  Icons.adaptive.share,
                 ),
               ),
             ],
