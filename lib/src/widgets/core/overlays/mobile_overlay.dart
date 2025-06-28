@@ -63,7 +63,7 @@ class _MobileOverlay extends StatelessWidget {
               ),
               MaterialIconButton(
                 toolTipMesg: podCtr.podPlayerLabels.settings.title,
-                color: itemColor,
+                color: podCtr.podPlayerLabels.settings.color ?? itemColor,
                 onPressed: () {
                   if (podCtr.onClickSave != null) {
                     Navigator.of(context).pop();

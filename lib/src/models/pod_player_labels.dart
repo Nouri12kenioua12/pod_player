@@ -17,27 +17,44 @@ class PodPlayerLabels {
   final PodPlayersItems save;
 
   /// Labels displayed in the video player progress bar and when an error occurs
- const  PodPlayerLabels({
+  const PodPlayerLabels({
     this.play,
     this.pause,
     this.mute,
     this.unmute,
-    this.settings = const PodPlayersItems(title: 'Settings',),
+    this.settings = const PodPlayersItems(
+      title: 'Settings',
+    ),
     this.fullscreen,
     this.exitFullScreen,
-    this.loopVideo =  const PodPlayersItems(title: 'Loop video',),
-    this.playbackSpeed =  const PodPlayersItems(title: 'Playback speed',),
-    this.error =  const PodPlayersItems(title: 'Error',),
-    this.quality =  const PodPlayersItems(title: 'Quality',),
-    this.optionEnabled =  const PodPlayersItems(title: 'on',),
-    this.optionDisabled =  const PodPlayersItems(title: 'off',),
-    this.save =   const PodPlayersItems(title: 'Save',),
+    this.loopVideo = const PodPlayersItems(
+      title: 'Loop video',
+    ),
+    this.playbackSpeed = const PodPlayersItems(
+      title: 'Playback speed',
+    ),
+    this.error = const PodPlayersItems(
+      title: 'Error',
+    ),
+    this.quality = const PodPlayersItems(
+      title: 'Quality',
+    ),
+    this.optionEnabled = const PodPlayersItems(
+      title: 'on',
+    ),
+    this.optionDisabled = const PodPlayersItems(
+      title: 'off',
+    ),
+    this.save = const PodPlayersItems(
+      title: 'Save',
+    ),
   });
 }
 
 class PodPlayersItems {
   final String title;
   final IconData? icon;
+  final Color? color;
 
-  const PodPlayersItems({required this.title, this.icon});
+  const PodPlayersItems({required this.title, this.icon, this.color});
 }
