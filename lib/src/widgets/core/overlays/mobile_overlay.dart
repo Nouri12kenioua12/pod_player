@@ -66,7 +66,7 @@ class _MobileOverlay extends StatelessWidget {
                 color: podCtr.podPlayerLabels.settings.color ?? itemColor,
                 onPressed: () {
                   if (podCtr.onClickSave != null) {
-                    Navigator.of(context).pop();
+                    // Navigator.of(context).pop();
                     podCtr.onClickSave!();
                   }
                   // if (podCtr.isOverlayVisible) {
