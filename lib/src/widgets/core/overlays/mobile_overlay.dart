@@ -76,7 +76,7 @@ class _MobileOverlay extends StatelessWidget {
                   // }
                 },
                 child: Icon(
-                  Icons.adaptive.share,
+                  podCtr.podPlayerLabels.settings.icon ?? Icons.adaptive.more,
                 ),
               ),
             ],
